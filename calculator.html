@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        .container {
+            height: 100vh;
+            background: #e3f9ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cal {
+            background: #4bccdd;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            outline: none;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            background: powderblue;
+            font-size: 20px;
+            margin: 10px;
+            color: black;
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            text-align: right;
+            font-size: 30px;
+            width: 100%;
+            margin: 10px 0;
+            border: none;
+            outline: none;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="cal">
+        <input type="text" id="display" disabled>
+
+        <table>
+            <tr>
+                <td><button onclick="appendCharacter('(')">(</button></td>
+                <td><button onclick="clearEntry()">CE</button></td>
+                <td><button onclick="appendCharacter(')')">)</button></td>
+                <td><button onclick="clearAll()">C</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendCharacter('1')">1</button></td>
+                <td><button onclick="appendCharacter('2')">2</button></td>
+                <td><button onclick="appendCharacter('3')">3</button></td>
+                <td><button onclick="appendCharacter('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendCharacter('4')">4</button></td>
+                <td><button onclick="appendCharacter('5')">5</button></td>
+                <td><button onclick="appendCharacter('6')">6</button></td>
+                <td><button onclick="appendCharacter('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendCharacter('7')">7</button></td>
+                <td><button onclick="appendCharacter('8')">8</button></td>
+                <td><button onclick="appendCharacter('9')">9</button></td>
+                <td><button onclick="appendCharacter('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendCharacter('.')">.</button></td>
+                <td><button onclick="appendCharacter('0')">0</button></td>
+                <td><button onclick="calculateResult()">=</button></td>
+                <td><button onclick="appendCharacter('/')">/</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function appendCharacter(character) {
+            document.getElementById('display').value += character;
+        }
+
+        function clearEntry() {
+            const currentValue = document.getElementById('display').value;
+            document.getElementById('display').value = currentValue.slice(0, -1);
+        }
+
+        function clearAll() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculateResult() {
+            const result = eval(document.getElementById('display').value);
+            document.getElementById('display').value = result;
+        }
+    </script>
+</body>
+</html>

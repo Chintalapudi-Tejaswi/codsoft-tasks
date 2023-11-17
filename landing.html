@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biryanis..</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+        }
+        .first {
+            z-index: -1;
+            width: 30%;
+            height: 100vh;
+            background: #566156;
+        }
+        .second {
+            z-index: -1;
+            width: 40%;
+            height: 100vh;
+            background: #494a49;
+        }
+        .third {
+            z-index: -1;
+            width: 30%;
+            height: 100vh;
+            background: #4cd137;
+        }
+        nav {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .logo {
+            color: #4cd137;
+            font-size: 50px;
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+        .logo:first-letter {
+            color: white;
+        }
+        .menu a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .icon {
+            width: 220px;
+        }
+        .plate {
+            position: absolute;
+            right: 50px;
+            top: 100px;
+            transform: perspective(500px)rotateX(20deg)rotateY(20deg)scale(1);
+            transition: transform 0.5s ease-in-out;
+        }
+        .plate:hover{
+            transform: perspective(500px)rotateX(0deg)rotateY(0deg)scale(1.05);
+        }
+        .text {
+            position: absolute;
+            top: 27%;
+            left: 100px;
+            color: white;
+            font-size: 39px;
+        }
+        button {
+            padding: 10px 20px;
+            color: white;
+            background-color: #4cd137;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Biryanis</div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Order</a>
+            <a href="#">Discounts</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="icon">
+            <i class='bx bxl-whatsapp'></i>  
+            <i class='bx bxl-facebook'></i>
+            <i class='bx bxl-google-plus'></i>      
+        </div>
+    </nav>
+    <div class="plate animate__animated animate__zoomIn animate__delay-1s">
+        <img src="https://www.livingbeyond.co.in/wp-content/uploads/2022/03/Chicken-Biryani.png">
+    </div>
+    <div class="first animate__animated animate__slideInDown"></div>
+    <div class="second animate__animated animate__zoomIn"></div> <!-- Close the div element -->
+    <div class="third animate__animated animate__slideInUp"></div>
+    <div class="text animate__animated animate__ zoomIn animate__delay-1s">
+        <h1>A plate full of</h1>
+        <h1>Happiness</h1>
+        <button>Order Now</button>
+    </div>
+</body>
+</html>
